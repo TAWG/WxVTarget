@@ -1,0 +1,16 @@
+<view style='position :abosulte'>
+  <calendar 
+    calendar-style="calendar"
+    header-style="header" 
+    board-style="board"
+    next="{{false}}"
+    prev="{{false}}" 
+    show-more-days="{{true}}" 
+    days-color="{{days_style}}"
+    binddayClick="dayClick"
+  />
+</view>
+<scroll-view wx:for="{{showDayDetails}}" wx:key="">
+  <text>{{item.content}}</text>
+</scroll-view>        
+

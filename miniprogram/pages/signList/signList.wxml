@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="swiper">
+      <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+        <block wx:for="{{imgUrls}}">
+          <swiper-item >
+            <image src="{{item}}" class='swiper-image'/>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}"
+               bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+    <view class="content">
+        <!-- <image src='http://pic.pptbz.com/201506/2015070581208537.JPG' style='width:40rpx;height:40rpx'/> -->
+        {{item.content}}
+    </view>
+    <view class="del"  catchtap="del" data-index="{{index}}" wx:if="{{item.isFinish == true}}">打卡22</view>
+    <view class="del"  catchtap="del" data-index="{{index}}" wx:elif="{{item.isFinish == false}}">已打卡11</view>
+  </view>
+</view>
+<cover-view>
+  <button  type="primary">新增目标</button>
+</cover-view>
